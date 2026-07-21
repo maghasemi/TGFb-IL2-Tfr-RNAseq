@@ -17,7 +17,7 @@ Naïve CD4⁺ T cells from GREAT.Smart-17A.*FoxP3*ʰᶜᴰ² reporter mice were 
 ```
 TGFb-IL2-Tfr-RNAseq/
 ├── data/
-│   ├── raw_counts/       # annotated_count_data_2.xlsx (Ensembl IDs x samples, last row = group labels)
+│   ├── raw_counts/       # annotated_count_data.xlsx (Ensembl IDs x samples, last row = group labels)
 │   └── metadata/         # Curated_List.xlsx (curated gene set used to label volcano plots)
 ├── scripts/
 │   ├── 01_gene_filtering_deseq2/   # load data, protein-coding filter, expression filter, DESeq2
@@ -25,9 +25,9 @@ TGFb-IL2-Tfr-RNAseq/
 │   ├── 03_volcano_plots/           # plain, curated-list-labeled, and threshold-labeled volcano plots
 │   └── 04_deg_overlap/             # Venn diagram + overlapping/exclusive gene lists per comparison
 ├── results/
-│   ├── tables/    # DEG_Significant_Results.xlsx, Euler_Overlapping_Genes.xlsx, and cached .rds objects
-│   └── figures/   # PNG/SVG plots, organized by parameter tag
-└── docs/
+    ├── tables/    # DEG_Significant_Results.xlsx, Euler_Overlapping_Genes.xlsx, and cached .rds objects
+    └── figures/   # PNG/SVG plots, organized by parameter tag
+
 ```
 
 Each `results/tables/{tag}` and `results/figures/{tag}` subfolder is named after the filtering/significance parameters used for that run (e.g. `Thr5_Frac0.75_FDR0.1_LFC0.5`), so different parameter choices don't overwrite each other.
@@ -41,7 +41,7 @@ Each `results/tables/{tag}` and `results/figures/{tag}` subfolder is named after
 ## Input data
 
 Place the following files under `data/`:
-- `data/raw_counts/annotated_count_data_2.xlsx` — gene count matrix with Ensembl gene IDs in the first column, one column per sample, gene symbols in the last column, and a final row giving each sample's condition (`Treg` / `Tfr` / `Tfh`).
+- `data/raw_counts/annotated_count_data.xlsx` — gene count matrix with Ensembl gene IDs in the first column, one column per sample, gene symbols in the last column, and a final row giving each sample's condition (`Treg` / `Tfr` / `Tfh`).
 - `data/metadata/Curated_List.xlsx` — single-column list of gene symbols to highlight in the curated-list volcano plots (script 03).
 
 ## How to run
