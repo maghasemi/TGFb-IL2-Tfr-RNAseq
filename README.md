@@ -10,7 +10,7 @@ Raw sequencing data are deposited in GEO under accession [GSE306188](https://www
 
 Naïve CD4⁺ T cells from GREAT.Smart-17A.*FoxP3*ʰᶜᴰ² reporter mice were differentiated in vitro into Treg, Tfr, and Tfh (TGF-β) subsets, sorted by flow cytometry, and profiled by bulk RNA-seq (QuantSeq 3′ mRNA-seq, single-end, Illumina NovaSeq 6000). This repository contains the R code used to go from the gene-level count matrix to the differential expression results and figures reported in the paper: protein-coding gene filtering, DESeq2-based differential expression between Treg/Tfr/Tfh, PCA/QC, volcano plots, and overlap analysis of differentially expressed genes (DEGs) across the three pairwise comparisons.
 
-**Scope of this repository:** the pipeline here starts from the annotated gene count matrix. Upstream processing of the raw FASTQ files (FastQC, adapter/quality trimming with Cutadapt, alignment to the *Mus musculus* GRCm39 reference genome with HISAT2, and gene-level quantification with featureCounts) was performed as described in the Methods section of the paper and is not included as executable code here.
+**Scope of this repository:** the pipeline here starts from the annotated gene count matrix. Upstream processing of the raw FASTQ files (FastQC, adapter/quality trimming with Trimmomatic, alignment to the *Mus musculus* GRCm39 reference genome with HISAT2, and gene-level quantification with featureCounts) was performed as described in the Methods section of the paper and is not included as executable code here.
 
 ## Repository structure
 
